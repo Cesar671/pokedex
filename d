@@ -1,0 +1,60 @@
+[33mcommit 40923e0b24676615c86dce5bf5c3f4d8cf22cf85[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Merge: ff5c334 4b33833
+Author: Cesar <cesar.j.pardo.barrientos@gmail.com>
+Date:   Thu Mar 30 17:39:50 2023 -0400
+
+    Merge branch 'main' of https://github.com/Cesar671/pokedex
+
+[33mcommit ff5c334aac6b3bc5f95d0992cde76d27f58b120c[m
+Author: Cesar <cesar.j.pardo.barrientos@gmail.com>
+Date:   Thu Mar 30 17:39:00 2023 -0400
+
+    deploy
+
+[33mcommit 4b338335a9cd9f4a1c1e252f212f1d58fd12282b[m
+Author: CesarJhovannyPardoBarrientos <109235271+Cesar671@users.noreply.github.com>
+Date:   Thu Mar 30 17:23:01 2023 -0400
+
+    Delete CNAME
+
+[33mcommit a28aff00f20a5c6aa06d50bfc856046c41145a1b[m
+Author: CesarJhovannyPardoBarrientos <109235271+Cesar671@users.noreply.github.com>
+Date:   Thu Mar 30 17:21:09 2023 -0400
+
+    Update CNAME
+
+[33mcommit b6953dee8805be083901081c315c7b8dbe7b75c4[m
+Author: CesarJhovannyPardoBarrientos <109235271+Cesar671@users.noreply.github.com>
+Date:   Thu Mar 30 17:20:29 2023 -0400
+
+    Update CNAME
+
+[33mcommit d30c566b183dd68164b760e7bb17c7ca1869498a[m
+Author: CesarJhovannyPardoBarrientos <109235271+Cesar671@users.noreply.github.com>
+Date:   Thu Mar 30 17:19:57 2023 -0400
+
+    Create CNAME
+
+[33mcommit de419589acba69d16a9a5829c269359de1b34ba7[m
+Author: Cesar <cesar.j.pardo.barrientos@gmail.com>
+Date:   Thu Mar 30 17:13:12 2023 -0400
+
+    main page
+
+[33mcommit bbccf172f58fe27a999119a9b82a693436ae378f[m
+Author: Cesar <cesar.j.pardo.barrientos@gmail.com>
+Date:   Thu Mar 30 00:51:39 2023 -0400
+
+    Pokemones y cards
+
+[33mcommit da4dd582e6210ba13c012984e62e68eb33ada218[m
+Author: Cesar <cesar.j.pardo.barrientos@gmail.com>
+Date:   Tue Mar 28 23:48:35 2023 -0400
+
+    Card Pokemon casi terminada
+
+[33mcommit e90402b73608e91f7d897c92f71d77d34058b2a7[m
+Author: Cesar <cesar.j.pardo.barrientos@gmail.com>
+Date:   Tue Mar 28 21:03:09 2023 -0400
+
+    Initialize project using Create React App
