@@ -4,13 +4,6 @@ import axios from "axios";
 const API_URL = 'https://pokeapi.co/api/v2/'
 const POKEMON = 'pokemon/'
 
-
-
-const initialState = {
-    data: [],
-    next: "",
-}
-
 const getInitialState = async () => {
     const state = {
         data : [],

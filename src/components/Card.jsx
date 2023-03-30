@@ -14,7 +14,10 @@ const Card = ({data}) => {
   const [dataPokemon, setDataPokemon] = useState(null)
 
   useEffect(() => {
-    getDataByUrl(data.url).then( response => {
+    const url = data.url
+    const urlSplited = url.split("/")
+    const id = urlSplited[urlSplited.length-2]
+    getDataByUrl(id).then( response => {
       setDataPokemon(response.data)
     })
   },[])

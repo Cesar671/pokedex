@@ -1,25 +1,48 @@
 import React,{useState, useEffect} from 'react'
-import { useSelector } from 'react-redux';
 import CardSection from './CardSection';
+import { getDataByGeneration } from '../js/getPokemonData';
+import { sortListPokemon, slicePokemonArray } from '../js/sortPokemon';
+import Pagination from '../components/Pagination';
+import { BackgroundGradient } from '../styles/style-background';
 
- const PaginateSection = () => {
-    const data = useSelector(state => state.pokemon);
-    const [pokemons, setPokemons] = useState([])
-    const [next, setNext] = useState("")
+ const PaginateSection = ({generation}) => {
+    const [PokemonList, setPokemonList] = useState([])
+    const [pokemons, setPokemons] = useState(null)
+    const [region, setRegion] = useState("")
+    const [currentIndex, setCurrentIndex] = useState(0)
+    
+    const RenderSection = (props) => {
+        if(currentIndex >= 0){
+            return <CardSection pokemon = {props.pokemon} region = {props.region}/>
+        }
+    }
 
     useEffect(() => {
-        data.then(response => {
-            setPokemons(response.data)
-            setNext(response.next)
+        getDataByGeneration(parseInt(generation)).then( result => {
+            const ordered = sortListPokemon(result.data.pokemon_species)
+            const sliced = slicePokemonArray(ordered)
+            setRegion(result.data.main_region.name)
+            setPokemonList(sliced)
         })
-        
-    }, [data, pokemons. next])
+    }, [])
+
+    useEffect(() => {
+        setPokemons(PokemonList[currentIndex])
+    }, [currentIndex, PokemonList])
+    
 
     return (<>
-        {(pokemons.length > 0) && <CardSection pokemon={pokemons}/>}
-        <div>
-            pagina 1
-        </div>
+        {(pokemons) && <>
+            <BackgroundGradient />
+            <RenderSection pokemon={pokemons} 
+                        region={ region }
+                        />
+            <Pagination currentIndex = {currentIndex}
+                    setCurrentIndex = {setCurrentIndex}
+                    lastPage = {PokemonList.length}
+        />
+        </>}
+
     </>)
 }
 
