@@ -11,34 +11,35 @@ const CardStyled = styled.div`
     display: grid;
     gap: 45px;
     text-align: center;
+    width: 150px;
     height: 500px;
     overflow: hidden;
     box-shadow: 5px 5px 5px;
     :hover{
         opacity: 1;
         img{
-            transform: scale(1.1);
+            transform: scale(1.2);
         }
     }
 `;
 
 const DivIdStyled = styled.div`
-    width: 35px;
-    height: 35px;
-    padding: 2px;
+    padding: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
-    background-color: white;
-    justify-self: end;
 `;
 
 const DivHeaderCard = styled.div`
     width: 150px;
     display: flex;
-    justify-content: end;
+    height: 35px;
+    justify-content: space-between;
     position: absolute;
+    background-color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    opacity: 0.6;
 `;
 
 
@@ -46,15 +47,14 @@ const NameCardStyled = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(128,128,128, 0.7);
+    background-color: rgba(128,128,128, 0.8);
     font-size: 13px;
-    border-style: solid;
-    border-width: 1px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     position: absolute;
     height: 30px;
     width: 100%;
+    color: white;
 `;
 
 const DivNameContainer = styled.div`
@@ -64,6 +64,7 @@ const DivNameContainer = styled.div`
     flex-direction: column;
     justify-content: end;
     position: absolute;
+
 `;
 
 const ImageStyledCard = styled.img`

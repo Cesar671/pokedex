@@ -1,0 +1,14 @@
+.contenedor-imagen {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    transition: height 0.3s ease-out;
+    z-index: -100;
+  }
+
+  .contenedor-imagen.reducir {
+    height: 50vh; /* Altura reducida de la imagen */
+    transition: height 0.3s ease-out;
+    overflow: hidden; /* Oculta el exceso de la imagen */
+    z-index: -100;
+  }

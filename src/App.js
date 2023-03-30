@@ -1,14 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter , Routes, Route } from 'react-router-dom';
 import Main from './pages/Main';
-import CardSection from './pages/CardSection';
+import PaginateSection from './pages/PaginateSection';
+import Background from './components/Background';
+import Header from './components/Header';
+import { Provider } from 'react-redux';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter> 
+      <Background></Background>
+      <Header></Header>
       <Routes path='/'>
-        <Route index element={<Main Section={CardSection}/>} exact/>
+        <Route index element={<Main Section={PaginateSection}/>} exact/>
       </Routes>
     </BrowserRouter>
   
