@@ -4,7 +4,6 @@ import Main from './pages/Main';
 import PaginateSection from './pages/PaginateSection';
 import Background from './components/Background';
 import Header from './components/Header';
-import { Provider } from 'react-redux';
 
 function App() {
   return (
