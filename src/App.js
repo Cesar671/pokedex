@@ -11,9 +11,7 @@ function App() {
     <BrowserRouter> 
       <Background></Background>
       <Header></Header>
-      <Routes path='/'>
-        <Route index element={<Main Section={PaginateSection}/>} exact/>
-      </Routes>
+      <Main Section={PaginateSection}/>
     </BrowserRouter>
   
   );
