@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter , Routes, Route } from 'react-router-dom';
+import { BrowserRouter,HashRouter , Routes, Route } from 'react-router-dom';
 import Main from './pages/Main';
 import PaginateSection from './pages/PaginateSection';
 import Background from './components/Background';
@@ -8,13 +8,13 @@ import Pokemon from './pages/Pokemon';
 
 function App() {
   return (
-    <BrowserRouter> 
+    <HashRouter> 
       <Background></Background>
       <Routes path='/'>
         <Route index element={<Main Section={PaginateSection}/>} exact/>
         <Route path='/pokemon/:id' element={<Pokemon />} exact/>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   
   );
 }

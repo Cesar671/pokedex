@@ -3,11 +3,13 @@ import { getDataByUrl } from '../js/getPokemonData'
 import { PokeSprite } from '../styles/style-pokemon-info'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { NextIcon } from '../styles/style-pokemon-info'
+import { useNavigate } from 'react-router-dom'
 
 const SpriteEvolution = ({data}) => {
     const [name, setName] = useState("")
     const [sprite, setSprite] = useState("")
     const [id, setId] = useState(null)
+    const navigate = useNavigate()
     useEffect(() => {
         setName(data.species.name)
         const urlSplited = data.species.url.split("/");
@@ -21,7 +23,7 @@ const SpriteEvolution = ({data}) => {
         <div style={{display: "flex", 
                     alignItems: "center", 
                     flexDirection:"column"}}>
-            <a href={`/Pokemon/${ id }`}><PokeSprite src={sprite}/> </a>
+            <div onClick={ () => {navigate(`/pokemon/${id}`);window.location.reload(true)} }><PokeSprite src={sprite}/> </div>
             <div>{ name }</div>
         </div>
         {(data.evolves_to.length > 0) && 

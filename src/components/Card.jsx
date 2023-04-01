@@ -8,11 +8,13 @@ import { CardStyled,
 import { getDataByUrl } from '../js/getPokemonData'
 import Tipo from './Tipo'
 import { TypeContainer } from '../styles/style-tipo'
+import { useNavigate } from 'react-router-dom'
 
 const Card = ({data}) => {
 
   const [dataPokemon, setDataPokemon] = useState(null)
   const [idPokemon, setIdPokemon] = useState(null)
+  const navigate = useNavigate()
 
   useEffect(() => {
     const url = data.url
@@ -25,7 +27,7 @@ const Card = ({data}) => {
   },[])
   
   return (<>{(dataPokemon) && 
-  <CardStyled href={(idPokemon) ? `/pokemon/${idPokemon}`: "#" }>
+  <CardStyled onClick={ () => {navigate(`/pokemon/${idPokemon}`);window.location.reload(true)} }>
     <DivHeaderCard>
         <DivIdStyled>
             {"#"+dataPokemon.id.toString().padStart(4,'0')}
