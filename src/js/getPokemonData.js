@@ -52,3 +52,9 @@ export const getSpecies = async (id) => {
     const data = await axios.get(url+id)
     return data.data
 }
+
+export const getMovementData = async (id) => {
+    const url = "https://pokeapi.co/api/v2/move/"
+    const data = await axios.get(url+id)
+    return data.data
+}

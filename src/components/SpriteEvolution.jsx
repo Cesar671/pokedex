@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom'
 
 const SpriteEvolution = ({data}) => {
     const [name, setName] = useState("")
-    const [sprite, setSprite] = useState("")
+    const [sprite, setSprite] = useState(null)
     const [id, setId] = useState(null)
     const navigate = useNavigate()
     useEffect(() => {
@@ -23,7 +23,9 @@ const SpriteEvolution = ({data}) => {
         <div style={{display: "flex", 
                     alignItems: "center", 
                     flexDirection:"column"}}>
-            <div onClick={ () => {navigate(`/pokemon/${id}`);window.location.reload(true)} }><PokeSprite src={sprite}/> </div>
+            <div onClick={ () => {navigate(`/pokemon/${id}`);window.location.reload(true)} }>
+                {(sprite) && <PokeSprite src={sprite}/> }
+            </div>
             <div>{ name }</div>
         </div>
         {(data.evolves_to.length > 0) && 

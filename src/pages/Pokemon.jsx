@@ -10,6 +10,7 @@ import { getDataByUrl, getAbilities, getAbility } from '../js/getPokemonData';
 import TypeDetail from '../components/TypeDetail';
 import Abilities from '../components/Abilities';
 import Evolutions from '../components/Evolutions';
+import Movements from '../components/Movements';
 
 const Pokemon = () => {
     const { id } = useParams();
@@ -18,6 +19,7 @@ const Pokemon = () => {
     useEffect(() => {
       getDataByUrl(id).then(result => {
         setPokemonData(result)
+        console.log(result)
       })
     }, [])
     
@@ -44,11 +46,10 @@ const Pokemon = () => {
                   <PokeSprite src={ pokemonData.sprites.front_default } />
               </SectionContainer>
             </GridHeader>
+            <h1> Evolution Chain </h1>
             <Evolutions id = { id }/>
             <Abilities abilities={pokemonData.abilities}/>
-            <SectionContainer>
-              Movements - tipe - fuertes contra
-            </SectionContainer>
+            <Movements movements = { pokemonData.moves } />
             <SectionContainer>
               Debilidades
             </SectionContainer>
