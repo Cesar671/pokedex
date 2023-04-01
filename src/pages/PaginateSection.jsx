@@ -19,9 +19,9 @@ import { BackgroundGradient } from '../styles/style-background';
 
     useEffect(() => {
         getDataByGeneration(parseInt(generation)).then( result => {
-            const ordered = sortListPokemon(result.data.pokemon_species)
+            const ordered = sortListPokemon(result.pokemon_species)
             const sliced = slicePokemonArray(ordered)
-            setRegion(result.data.main_region.name)
+            setRegion(result.main_region.name)
             setPokemonList(sliced)
         })
     }, [])

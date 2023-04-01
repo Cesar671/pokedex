@@ -18,14 +18,14 @@ const Card = ({data}) => {
     const urlSplited = url.split("/")
     const id = urlSplited[urlSplited.length-2]
     getDataByUrl(id).then( response => {
-      setDataPokemon(response.data)
+      setDataPokemon(response)
     })
   },[])
   
   return (<>{(dataPokemon) && <CardStyled>
     <DivHeaderCard>
         <DivIdStyled>
-            {dataPokemon.id.toString().padStart(4,'0')}
+            {"#"+dataPokemon.id.toString().padStart(4,'0')}
         </DivIdStyled>
         <TypeContainer>
           {

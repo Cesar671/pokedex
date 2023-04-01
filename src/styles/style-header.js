@@ -10,7 +10,7 @@ const HeaderContainerStyle = styled.div`
 `;
 
 const LogoHeaderStyled = styled.img`
-    width: 50%;
+
     @media(max-width: 1000px){
         width: 100%;
     }

@@ -3,7 +3,7 @@ import { HeaderContainerStyle, LogoHeaderStyled } from '../styles/style-header'
 const Header = () => {
   return (
     <HeaderContainerStyle>
-        <LogoHeaderStyled src = 'resources/Logo.png'/>
+        <LogoHeaderStyled src = '../resources/Logo.png'/>
     </HeaderContainerStyle>
   )
 }

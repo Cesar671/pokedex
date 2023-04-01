@@ -8,6 +8,8 @@ const BackgroundStyled = styled.img`
 `
 
 const BackgroundContainer = styled.div`
+    left: 0;
+    top:0;
     position: fixed;
     display: flex;
     justify-content: center;

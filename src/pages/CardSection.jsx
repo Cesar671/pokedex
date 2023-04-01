@@ -13,7 +13,7 @@ const CardSection = ({pokemon, region }) => {
 
   return (<Section>  
   <HeaderTittle>
-    <PokedexImg src='resources/pokedex.png'/>
+    <PokedexImg src='../resources/pokedex.png'/>
     <h1>
       {region}
     </h1>

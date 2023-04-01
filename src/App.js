@@ -4,15 +4,15 @@ import Main from './pages/Main';
 import PaginateSection from './pages/PaginateSection';
 import Background from './components/Background';
 import Header from './components/Header';
-import { Provider } from 'react-redux';
+import Pokemon from './pages/Pokemon';
 
 function App() {
   return (
     <BrowserRouter> 
       <Background></Background>
-      <Header></Header>
       <Routes path='/'>
         <Route index element={<Main Section={PaginateSection}/>} exact/>
+        <Route path='pokemon/:id' element={<Pokemon />} exact/>
       </Routes>
     </BrowserRouter>
   

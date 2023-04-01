@@ -24,7 +24,7 @@ const Background = () => {
 
   return (
     <BackgroundContainer >
-        <BackgroundStyled src='resources/fondo.png' isReduced={isReduced}/>
+        <BackgroundStyled src='../resources/fondo.png' isReduced={isReduced}/>
     </BackgroundContainer>
   )
 }
