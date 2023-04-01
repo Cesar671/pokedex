@@ -12,17 +12,20 @@ import { TypeContainer } from '../styles/style-tipo'
 const Card = ({data}) => {
 
   const [dataPokemon, setDataPokemon] = useState(null)
+  const [idPokemon, setIdPokemon] = useState(null)
 
   useEffect(() => {
     const url = data.url
     const urlSplited = url.split("/")
     const id = urlSplited[urlSplited.length-2]
+    setIdPokemon(id);
     getDataByUrl(id).then( response => {
       setDataPokemon(response)
     })
   },[])
   
-  return (<>{(dataPokemon) && <CardStyled>
+  return (<>{(dataPokemon) && 
+  <CardStyled href={(idPokemon) ? `/pokemon/${idPokemon}`: "#" }>
     <DivHeaderCard>
         <DivIdStyled>
             {"#"+dataPokemon.id.toString().padStart(4,'0')}

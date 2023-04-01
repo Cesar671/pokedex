@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const CardStyled = styled.div`
+const CardStyled = styled.a`
     border-radius: 10px;
     opacity: 0.8;
     background-image: url('resources/fondo.png');
