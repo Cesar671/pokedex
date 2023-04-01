@@ -12,7 +12,7 @@ function App() {
       <Background></Background>
       <Routes path='/'>
         <Route index element={<Main Section={PaginateSection}/>} exact/>
-        <Route path='pokemon/:id' element={<Pokemon />} exact/>
+        <Route path='/pokemon/:id' element={<Pokemon />} exact/>
       </Routes>
     </BrowserRouter>
   
