@@ -12,6 +12,7 @@ import Abilities from '../components/Abilities';
 import Evolutions from '../components/Evolutions';
 import Movements from '../components/Movements';
 import Desplegable from '../components/Desplegable';
+import DetailsPokemon from '../components/Details_Pokemon';
 
 const Pokemon = () => {
     const { id } = useParams();
@@ -46,7 +47,7 @@ const Pokemon = () => {
                   <PokeSprite src={ pokemonData.sprites.front_default } />
               </SectionContainer>
             </GridHeader>
-            <h1> Evolution Chain </h1>
+            <DetailsPokemon />
             <Evolutions id = { id }/>
             <Desplegable name = "Abilities" Data = {() => <Abilities abilities={pokemonData.abilities}/>} />
             <Desplegable name = "Movements" Data = {() => <Movements movements = { pokemonData.moves }/>} />

@@ -18,10 +18,13 @@ const Evolutions = ({id}) => {
     }, [])
     
   return (<>
-    {(evolutionData) ? 
-    <EvolutionContainer>
-        <SpriteEvolution data = {evolutionData}/>
-    </EvolutionContainer>: 
+    {(evolutionData) ? <>
+        <h1>Evolution Chain</h1>
+        <EvolutionContainer>
+            <SpriteEvolution data = {evolutionData}/>
+        </EvolutionContainer>
+    </>
+    : 
         <div>...cargando</div>}
     </>
   )
