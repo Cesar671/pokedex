@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { SpriteTypeMovement, MovementContainerStyle } from '../styles/style-movents'
+import { SpriteTypeMovement, MovementContainerStyle, NameMovementContainer } from '../styles/style-movents'
 import { getMovementData } from '../js/getPokemonData'
 
 const MovementRow = ({movement}) => {
@@ -10,17 +10,22 @@ const MovementRow = ({movement}) => {
       const idType = urlSplited[urlSplited.length-2]
       getMovementData(idType).then((result) => {
         setMovement(result)
-        console.log(result)
       })
     }, [])
     
   return (
-    <>{(move) && <MovementContainerStyle>
-        <SpriteTypeMovement src={ `${route+move.type.name}.png` } />
-        <div>{ movement.name }</div>:
+    <>{(move) && <>
+      <MovementContainerStyle>
+        <NameMovementContainer>
+          <SpriteTypeMovement src={ `${route+move.type.name}.png` } />
+          <div>{ movement.name }</div>:
+        </NameMovementContainer>
+        
         <p>{(move.effect_entries.length>0) && move.effect_entries[0].effect}</p>
-    </MovementContainerStyle>}
+    </MovementContainerStyle>
     <hr style={{width:"95%"}}/>
+    </>}
+    
     </>)
 }
 

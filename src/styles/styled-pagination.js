@@ -19,7 +19,10 @@ const Container = styled.div`
 `;
 
 const IconStyledPagination = styled(FontAwesomeIcon)`
-
+    transition: 0.1s ease-in-out;
+    :hover{
+        color:white;
+    }
 `;
 
 export {

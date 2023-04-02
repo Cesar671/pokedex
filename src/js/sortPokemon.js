@@ -17,14 +17,29 @@ export const sortListPokemon = (pokeList = []) => {
     return ordered
 }
 
-export const slicePokemonArray = (pokeList = []) => {
+export const slicePokemonArray = (pokeList = [], quantity) => {
     const slicedList = []
-    for (let index = 0; index < pokeList.length; index=index+20) {
-        if(index+20>pokeList.length){
+    for (let index = 0; index < pokeList.length; index=index+quantity) {
+        if(index+quantity>pokeList.length){
             slicedList.push(pokeList.slice(index, pokeList.length))
         } else {
-            slicedList.push(pokeList.slice(index, index+20))
+            slicedList.push(pokeList.slice(index, index+quantity))
         }
     }
     return slicedList
+}
+
+export const sortListMovements = (listMovement = []) => {
+    const ordered = listMovement.sort((a, b) => {
+        const nameA = a.move.name
+        const nameB = b.move.name
+        if(nameA>nameB){
+            return 1
+        }
+        if(nameA<nameB){
+            return -1
+        }
+        return 0
+    })
+    return ordered
 }

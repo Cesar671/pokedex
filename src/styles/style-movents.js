@@ -6,7 +6,8 @@ export const SpriteTypeMovement = styled.img`
 `;
 
 export const MovementContainerStyle = styled.div`
-    display:flex;
+    display:grid;
+    grid-template-columns: 1fr 4fr;
     gap:10px;
     padding:3px;
     justify-content: start;
@@ -17,3 +18,10 @@ export const MovementContainerStyle = styled.div`
         word-wrap: break-word;
     }
 `
+
+export const NameMovementContainer = styled.div`
+    display:flex;
+    justify-content:start;
+    align-items:center;
+    gap:5px;
+`;

@@ -6,11 +6,12 @@ import { PokeSprite,
     SectionSections,
     GridHeader,
     PokeballIcon } from '../styles/style-pokemon-info';
-import { getDataByUrl, getAbilities, getAbility } from '../js/getPokemonData';
+import { getDataByUrl } from '../js/getPokemonData';
 import TypeDetail from '../components/TypeDetail';
 import Abilities from '../components/Abilities';
 import Evolutions from '../components/Evolutions';
 import Movements from '../components/Movements';
+import Desplegable from '../components/Desplegable';
 
 const Pokemon = () => {
     const { id } = useParams();
@@ -19,7 +20,6 @@ const Pokemon = () => {
     useEffect(() => {
       getDataByUrl(id).then(result => {
         setPokemonData(result)
-        console.log(result)
       })
     }, [])
     
@@ -48,8 +48,9 @@ const Pokemon = () => {
             </GridHeader>
             <h1> Evolution Chain </h1>
             <Evolutions id = { id }/>
-            <Abilities abilities={pokemonData.abilities}/>
-            <Movements movements = { pokemonData.moves } />
+            <Desplegable name = "Abilities" Data = {() => <Abilities abilities={pokemonData.abilities}/>} />
+            <Desplegable name = "Movements" Data = {() => <Movements movements = { pokemonData.moves }/>} />
+            
             <SectionContainer>
               Debilidades
             </SectionContainer>

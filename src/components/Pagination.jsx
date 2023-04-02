@@ -36,12 +36,11 @@ const Pagination = ({currentIndex, setCurrentIndex, lastPage}) => {
         <PaginationContainer>
             <div onClick={() => goFirst()}><IconStyledPagination  icon={faBackwardFast} /></div>
             <div onClick={() => changePage(PREVIUS)}><IconStyledPagination  icon={faBackward} /></div>
-            <div style={{userSelect:"none"}}>{currentIndex+1}</div>
+            <div style={{userSelect:"none"}}>{`${currentIndex+1}/${lastPage}`}</div>
             <div onClick={() => changePage(NEXT)}><IconStyledPagination  icon={faForward} /></div>
             <div onClick={() => goLast()}><IconStyledPagination  icon={faForwardFast} /></div>
         </PaginationContainer>
     </Container>
-    
   )
 }
 

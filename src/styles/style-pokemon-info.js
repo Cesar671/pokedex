@@ -77,6 +77,7 @@ export const AbilityInfo = styled.div`
     display: flex;
     flex-direction: column;
     padding: 20px;
+    width: 100%;
     p{
         word-wrap: break-word;
     }
@@ -84,7 +85,10 @@ export const AbilityInfo = styled.div`
 
 export const SectionContainerData = styled.div`
     display: grid;
-    grid-template-columns: 1fr 4fr ;
+    grid-template-columns: 1fr;
+    @media(max-width:657px){
+        grid-template-columns: 1fr;
+    }
 `;
 
 export const EvolutionContainer = styled.div`
