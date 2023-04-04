@@ -13,6 +13,8 @@ import Evolutions from '../components/Evolutions';
 import Movements from '../components/Movements';
 import Desplegable from '../components/Desplegable';
 import Sprites from '../components/Sprites';
+import Weakeness from '../components/Weakeness';
+
 
 const Pokemon = () => {
     const { id } = useParams();
@@ -21,7 +23,6 @@ const Pokemon = () => {
     useEffect(() => {
       getDataByUrl(id).then(result => {
         setPokemonData(result)
-        console.log(result)
       })
     }, [])
     
@@ -49,7 +50,7 @@ const Pokemon = () => {
               </SectionContainer>
             </GridHeader>
             <Evolutions id = { id }/>
-            
+            <Weakeness types={ pokemonData.types }/>
             { (pokemonData.abilities.length > 0) && 
             <Desplegable name = "Abilities" Data = {() => 
               <Abilities abilities={pokemonData.abilities}/>} />}
