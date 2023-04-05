@@ -11,6 +11,7 @@ const SpriteEvolution = ({data}) => {
     const [id, setId] = useState(null)
     const navigate = useNavigate()
     useEffect(() => {
+        console.log(data)
         setName(data.species.name)
         const urlSplited = data.species.url.split("/");
         const idPokemon = urlSplited[urlSplited.length-2]
@@ -18,6 +19,7 @@ const SpriteEvolution = ({data}) => {
         getDataByUrl(idPokemon).then((response) => {
             setSprite(response.sprites.front_default)
         })
+        
     }, [])
   return (<>
         <div style={{display: "flex", 

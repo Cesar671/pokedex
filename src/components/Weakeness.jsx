@@ -30,10 +30,10 @@ const Weakeness = ({ types }) => {
    
     <WeakenessContainer>
         <h2>Resistances</h2>
-        <DamageSectionComponent data = { data.super_effective } label = "Super Effective To: "/>
-        <DamageSectionComponent data = { data.effective } label = "Effective To: "/>
-        <DamageSectionComponent data = { data.non_effective } label = "Non Effective To: "/>
-        <DamageSectionComponent data = { data.inmune } label = "Inmune To: "/>
+        <DamageSectionComponent data = { data.super_effective } label = "Super Effective From: "/>
+        <DamageSectionComponent data = { data.effective } label = "Effective From: "/>
+        <DamageSectionComponent data = { data.non_effective } label = "Non Effective From: "/>
+        <DamageSectionComponent data = { data.inmune } label = "Inmune From: "/>
         
     </WeakenessContainer>
   )

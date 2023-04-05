@@ -32,7 +32,6 @@ export const SectionContainer = styled.div`
     justify-content: center;
     align-items: center;
     padding: 10px;
-    width: 100%;
     height: 100%;
     gap:10px;
 `;
@@ -64,8 +63,16 @@ export const TypeStyledContainer = styled.div`
     justify-content: center;
     align-items: center;
     padding: 5px;
-    border-radius: 10px;
     background-color: rgba(128,128,128,0.8);
+    transition: 0.4s ease-in-out;
+    border-style: solid;
+    border-color: rgba(128,128,128,0.8);
+    border-width: 1px;
+    :hover{
+        color:black;
+        border-color : black;
+        background-color: rgba(128,128,128,0.2);
+    }
 `;
 
 export const PokeballIcon = styled.img`

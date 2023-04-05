@@ -34,9 +34,8 @@ export const WeaknessType = styled.div`
     gap:5px;
     background-color: rgba(128,128,128,0.7);
     padding:3px;
-    border-radius: 5px;
     border-style: solid;
-    border-width: 2px;
+    border-width: 1px;
     border-color: ${ props => DATA_COLORS[props.color] };
     height:20px;
 `   

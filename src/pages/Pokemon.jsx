@@ -4,8 +4,7 @@ import { PokeSprite,
     ContainerInfo, 
     SectionContainer,
     SectionSections,
-    GridHeader,
-    PokeballIcon } from '../styles/style-pokemon-info';
+    GridHeader } from '../styles/style-pokemon-info';
 import { getDataByUrl } from '../js/getPokemonData';
 import TypeDetail from '../components/TypeDetail';
 import Abilities from '../components/Abilities';
@@ -14,7 +13,7 @@ import Movements from '../components/Movements';
 import Desplegable from '../components/Desplegable';
 import Sprites from '../components/Sprites';
 import Weakeness from '../components/Weakeness';
-
+import BottonsNextPrevius from '../components/BottonsNextPrevius';
 
 const Pokemon = () => {
     const { id } = useParams();
@@ -29,12 +28,9 @@ const Pokemon = () => {
   return (<>
       <ContainerInfo>
         {(pokemonData) ? (<>
+            <BottonsNextPrevius currentIndex={ id } />
             <GridHeader>
               <SectionSections>
-                <SectionContainer>
-                  <PokeballIcon src = "../resources/pokeball.png"/>
-                  { "id : #"+id.toString().padStart(4,"0")}
-                </SectionContainer>
                 <SectionContainer> 
                   {
                     pokemonData.types.map((data) => <>
@@ -42,11 +38,14 @@ const Pokemon = () => {
                     </>)
                   }
                 </SectionContainer>
-                <SectionContainer></SectionContainer>
               </SectionSections>
               <SectionContainer style={{flexDirection: "column"}}>
                   {pokemonData.name}
-                  <PokeSprite src={ pokemonData.sprites.front_default } />
+                  <PokeSprite src={ 
+                    (pokemonData.sprites.front_default) ?  
+                      (pokemonData.sprites.front_default):
+                        "../resources/notFound.png"
+                    } />
               </SectionContainer>
             </GridHeader>
             <Evolutions id = { id }/>

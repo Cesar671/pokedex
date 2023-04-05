@@ -397,7 +397,7 @@ const FIGHTING_TYPE = {
         [ICE, EFICAZ],
         [NORMAL, EFICAZ],
         [ROCK, EFICAZ],
-        [DARK, EFICAZ]
+        [DARK, EFICAZ],
         [BUG, DEBIL],
         [FAIRY, DEBIL],
         [PSYCHIC, DEBIL],
@@ -446,7 +446,7 @@ const getType = (Type) => {
         case POISON:
             return POISON_TYPE;
         case FIGHTING:
-            return FIGHTING_TYPE
+            return FIGHTING_TYPE;
         default:
             return null
     }
