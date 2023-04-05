@@ -15,9 +15,9 @@ const TipeRow = ({ability}) => {
     
   return (<>
         {(data) && <SectionContainerData>
-            <div style={{display:"flex", alignItems:'center'}}>
+            <h3 style={{display:"flex", alignItems:'center'}}>
                 {data.name}
-            </div>
+            </h3>
             <p>
                 {(data.effect_entries.length > 0) ? 
                 data.effect_entries[1].effect:

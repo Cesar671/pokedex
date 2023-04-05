@@ -77,7 +77,7 @@ export const AbilityInfo = styled.div`
     display: flex;
     flex-direction: column;
     padding: 20px;
-    width: 100%;
+    width: 90%;
     p{
         word-wrap: break-word;
     }

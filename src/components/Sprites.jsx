@@ -1,11 +1,8 @@
-import React,{ useEffect } from 'react'
+import React from 'react'
 import Sprite from './Sprite'
 import { DetailsSprites } from '../styles/style-details-pokemon'
 
 const Sprites = ({sprites}) => {
-    useEffect(() => {
-        console.log(sprites)
-    }, [])
     
   return (<>
         <DetailsSprites> 

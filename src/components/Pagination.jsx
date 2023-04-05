@@ -5,7 +5,6 @@ import { faBackwardFast,
         faForwardFast,
         faForward
              } from '@fortawesome/free-solid-svg-icons'
-import { current } from '@reduxjs/toolkit';
 
 const Pagination = ({currentIndex, setCurrentIndex, lastPage}) => {
     const PREVIUS = -1;
@@ -28,7 +27,6 @@ const Pagination = ({currentIndex, setCurrentIndex, lastPage}) => {
     const goLast = () => {
         if(currentIndex != lastPage-1){
             setCurrentIndex(lastPage-1)
-            console.log(currentIndex, lastPage)
         } 
     }
   return (
