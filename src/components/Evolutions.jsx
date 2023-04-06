@@ -2,17 +2,52 @@ import React,{ useEffect, useState } from 'react'
 import { getEvolutionChain, getSpecies } from '../js/getPokemonData'
 import SpriteEvolution from './SpriteEvolution'
 import { EvolutionContainer } from '../styles/style-pokemon-info'
+import { PokeSprite } from '../styles/style-pokemon-info'
+import { getIdPokemonFromUrl } from '../js/sortPokemon'
+import { urlSprites } from '../js/Directions'
+import { faArrowDown } from '@fortawesome/free-solid-svg-icons'
+import { NextIcon } from '../styles/style-pokemon-info'
+import { urlNotfound } from '../js/Directions'
 
 const Evolutions = ({id}) => {
 
     const [evolutionData, setEvolutionData] = useState(null)
+    const [varieties, setVarieties] = useState(null)
+    const onError = (e) => {
+        e.target.onError = null;
+        e.target.src = urlNotfound;
+    }
+
+    const RenderPokemonVarieties = () => {
+        if(varieties && varieties.length > 1) {
+            return <div>
+                <hr />
+                <div style={{display:"flex", 
+                            padding:"10px", 
+                            flexWrap:"wrap", 
+                            justifyContent:"center"}}>
+                {varieties.map((data, index) => {
+                    if(index > 0){
+                        const id = getIdPokemonFromUrl(data.pokemon.url)
+                        const name = data.pokemon.name
+                        const url = urlSprites+id+".png"
+                        return (<div style={{display:"flex", 
+                                            flexDirection:"column",
+                                            alignItems:"center"}}>
+                            <NextIcon icon={ faArrowDown }/>
+                            <PokeSprite src={url} onError={ onError } />
+                            <div>{ name }</div>
+                        </div>)
+                }})}
+            </div>
+            </div>
+        } 
+    }
 
     useEffect(() => {
-        //aca arreglar el problema de la url, no tiene cadena de 
-        //evolucion, en cambio tiene de quien evoluciona
         getSpecies(id).then((responseSpecies) => {
-            const dataSplited = responseSpecies.evolution_chain.url.split("/")
-            const idEvo = dataSplited[dataSplited.length-2]
+            const idEvo = getIdPokemonFromUrl(responseSpecies.evolution_chain.url)
+            setVarieties(responseSpecies.varieties)
         getEvolutionChain(idEvo).then((response) => {
                 setEvolutionData(response.chain)
             })
@@ -20,14 +55,15 @@ const Evolutions = ({id}) => {
     }, [])
     
   return (<>
-    {(evolutionData) ? <>
-        <h1>Evolution Chain</h1>
-        <EvolutionContainer>
-            <SpriteEvolution data = {evolutionData}/>
-        </EvolutionContainer>
-    </>
-    : 
-        <div>...cargando</div>}
+        {(evolutionData) ? <>
+            <h1>Evolution Chain</h1>
+            <EvolutionContainer>
+                <SpriteEvolution data = {evolutionData}/>
+            </EvolutionContainer>
+        </>
+        : 
+            <div>...cargando</div>}
+        <RenderPokemonVarieties />
     </>
   )
 }

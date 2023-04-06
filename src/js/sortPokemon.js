@@ -43,3 +43,8 @@ export const sortListMovements = (listMovement = []) => {
     })
     return ordered
 }
+
+export const getIdPokemonFromUrl = (url) => {
+    const dataSplited = url.split("/")
+    return dataSplited[dataSplited.length-2]
+}

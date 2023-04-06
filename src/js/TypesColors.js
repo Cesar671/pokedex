@@ -10,7 +10,7 @@ export const DATA_COLORS = {
     "steel": "teal",
     "bug": "darkgreen",
     "dragon": "darkblue",
-    "ghost": "darklateblue",
+    "ghost": "#645f8a",
     "fairy": "hotpink",
     "psychic": "deeppink",
     "rock": "burlywood",
