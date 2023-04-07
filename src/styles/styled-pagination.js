@@ -9,7 +9,7 @@ const PaginationContainer = styled.div`
 `;
 
 const Container = styled.div`
-    width: 100%;
+    width: 98%;
     height: 20px;
     display: flex;
     justify-content: center;

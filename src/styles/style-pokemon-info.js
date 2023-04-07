@@ -22,7 +22,6 @@ export const ContainerInfo = styled.div`
     flex-direction: column;
     justify-content:center;
     align-items: center;
-    border-radius: 20px;
     color: white;
     max-width:700px;
 `;

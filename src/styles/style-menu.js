@@ -1,15 +1,81 @@
 import styled from "styled-components";
 
 export const Menucontainer = styled.div`
-    position: relative;
-    background-color: rgba(128,128,128,0.8) ;
+    left: 0;
+    position: fixed;
+    background-color: rgba(128,128,128,0.9) ;
+    height:100%;
+    z-index:100;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+    gap: 20px;
+    @keyframes shine {
+        from {
+            filter: brightness(1);
+        }
+        to {
+            filter: brightness(3);
+        }
+    }
+    @keyframes sparkle {
+        0% {
+            box-shadow: none;
+        }
+        50% {
+            box-shadow: 0 0 2px 2px #ffffff, 0 0 5px 5px #ffffff, 0 0 10px 10px #ffffff;
+        }
+        100% {
+            box-shadow: none;
+        }
+    }
+
+    @keyframes sparkle2 {
+        0% {
+            box-shadow: none;
+        }
+        50% {
+            box-shadow: 0 0 0px 0px #87CEEB, 0 0 2px 2px #87CEEB, 0 0 5px 5px #87CEEB;
+        }
+        100% {
+            box-shadow: none;
+        }
+    }
 `;
 
 export const ButtonContainer = styled.button`
 
 `;
 
-export const ImgContainerLogo = styled.img`
-    width: 100px;
-    height: 100px;
+export const LogoImg = styled.img`
+    width: 140px;
+    :hover{
+        animation: shine 1s ease-in-out infinite alternate;
+    }
 `;
+
+export const PokeballCenter = styled.div`
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: white;
+    animation: sparkle2 2s ease-in-out infinite alternate;
+    position: absolute;
+    top: 68.2px;
+    left: 68.49px;
+
+`;
+
+export const ImgContainerLogo = styled.img`
+    width: 70px;
+    height: 70px;
+    transform: rotate(${ props => (props.rotate*-1)/2 }deg);
+    border-radius: 50%;
+    animation: sparkle 2s ease-in-out infinite alternate;
+`;
+
+export const HeaderMenuDivInvisible = styled.div`
+    height:100%;
+`

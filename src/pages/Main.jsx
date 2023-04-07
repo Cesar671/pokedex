@@ -4,7 +4,7 @@ import Header from '../components/Header'
 const Main = ({Section}) => {
   return (
     <main>
-        <Header></Header>
+        <Header />
         <Section generation = "1"/>
         <Section generation = "2"/>
         <Section generation = "3"/>

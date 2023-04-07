@@ -10,12 +10,23 @@ const HeaderContainerStyle = styled.div`
 `;
 
 const LogoHeaderStyled = styled.img`
-
+    background-color: transparent;
     @media(max-width: 1000px){
         width: 100%;
     }
-    
-`
+`;
+
+export const ImageBackdrop = styled.div`
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  backdrop-filter: blur(10px);
+`;
+
 
 export {
     HeaderContainerStyle,

@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const CardStyled = styled.div`
-    border-radius: 10px;
     opacity: 0.8;
     background-image: url('resources/fondo.png');
     background-size: cover;

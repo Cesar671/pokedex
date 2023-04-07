@@ -1,5 +1,6 @@
 import React from 'react'
 import { HeaderContainerStyle, LogoHeaderStyled } from '../styles/style-header'
+import { ImageBackdrop } from '../styles/style-header'
 const Header = () => {
   return (
     <HeaderContainerStyle>
