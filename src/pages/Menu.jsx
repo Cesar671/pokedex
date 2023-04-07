@@ -1,54 +1,53 @@
-import React,{ useState, useEffect, useRef } from 'react'
+import React,{ useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Menucontainer, 
-    ImgContainerLogo, 
-    LogoImg,
-    PokeballCenter } from '../styles/style-menu'
-import { urlPokeball, urlLogo, urlPokedex} from '../js/Directions'
+    MenuContainerResponsive,
+    MenuContainerR,
+    ButtonMenuResponsive,
+    MenuContainerRNonDisplayed } from '../styles/style-menu'
+import { urlPokeball,
+        urlPokedex,
+        menuPages} from '../js/Directions'
 import ButtonMenu from '../components/ButtonMenu'
+import Pokeball from '../components/Pokeball'
+import LogoButton from '../components/LogoButton'
 const Menu = () => {
+
+    const [display, setDisplay] = useState(false)
+    const handlerButtonResponsive = () => {
+        setDisplay(!display)
+        console.log(display)
+    }
     
-    const menu = useRef()
-    const [display, setDisplay] = useState(0)
-    useEffect(() => {
-        
-        function handleScroll() {
-            const data = document.documentElement.scrollTop
-            setDisplay(data)
-        }
-        setDisplay(menu.current.getBoundingClientRect())
-        window.addEventListener("scroll", handleScroll);
-        
-        return () => {
-          window.removeEventListener("scroll", handleScroll);
-        };
-      }, []);
+    const RenderButtons = () => {
+        return menuPages.map((item) => 
+        <Link style={{textDecoration:"none"}}>
+            <ButtonMenu name = { item.name } 
+                        icon = { item.icon } 
+                        url = { item.url }/>
+            <hr />
+        </Link>)
+     }
 
-  return (<>
-
-    <Menucontainer ref = { menu }>
+  return (<MenuContainerResponsive>
+    <div style={{width:"180px"}}></div>
+    <Menucontainer className='Menu'>
+        <Pokeball />
+        <LogoButton />
         <div>
-            <ImgContainerLogo src={urlPokeball} rotate = { display }/>
-            <PokeballCenter></PokeballCenter>
+            <RenderButtons />
         </div>
-        <a href='/'><LogoImg src={ urlLogo }/></a>
-        <div>
-            <Link style={{textDecoration:"none"}}>
-                <ButtonMenu name = "boton 2" icon = {urlPokedex}/>
-                <hr />
-            </Link>
-            <Link style={{textDecoration:"none"}}>
-                <ButtonMenu name = "boton 3" icon = {urlPokedex}/>
-                <hr />
-            </Link>
-            <Link style={{textDecoration:"none"}}>
-                <ButtonMenu name = "boton 4" icon = {urlPokeball}/>
-                <hr />
-            </Link>
-        </div>
-        
-    </Menucontainer>
-  </>
+    </Menucontainer>    
+    <MenuContainerR className='responsiveMenu' >
+        <ButtonMenuResponsive onClick= { handlerButtonResponsive }>
+             <Pokeball />
+        </ButtonMenuResponsive>
+        <MenuContainerRNonDisplayed display={ (display) ? "flex":"none" }>
+            <LogoButton />
+            <RenderButtons />
+        </MenuContainerRNonDisplayed>
+    </MenuContainerR>
+  </MenuContainerResponsive>
     
   )
 }

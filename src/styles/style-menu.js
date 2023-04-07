@@ -63,9 +63,8 @@ export const PokeballCenter = styled.div`
     background-color: white;
     animation: sparkle2 2s ease-in-out infinite alternate;
     position: absolute;
-    top: 68.2px;
-    left: 68.49px;
-
+    margin-left: 28.42px;
+    margin-top: -44.7px;
 `;
 
 export const ImgContainerLogo = styled.img`
@@ -78,4 +77,42 @@ export const ImgContainerLogo = styled.img`
 
 export const HeaderMenuDivInvisible = styled.div`
     height:100%;
+`
+
+export const MenuContainerResponsive = styled.div`
+    @media (max-width: 700px){
+        .Menu{
+            display: none;
+        }
+        .responsiveMenu{
+            display: flex;
+        }
+        position: absolute;
+    }
+`
+
+export const ButtonMenuResponsive = styled.button`
+    background-color: transparent;
+    border-style: none;
+`
+
+export const MenuContainerR = styled.div`
+    display: none;
+    position:fixed;
+    top: 0;
+    left: 0;
+    margin-left: 30px;
+    margin-top: 30px;
+    z-index: 101;
+    transition: 0.3s ease-in-out;
+`
+
+export const MenuContainerRNonDisplayed = styled(Menucontainer)`
+    display: ${props => props.display};
+    z-index: -1;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
 `

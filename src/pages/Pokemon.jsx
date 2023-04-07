@@ -14,6 +14,7 @@ import Desplegable from '../components/Desplegable';
 import Sprites from '../components/Sprites';
 import Weakeness from '../components/Weakeness';
 import BottonsNextPrevius from '../components/BottonsNextPrevius';
+import { urlNotfound } from '../js/Directions';
 
 const Pokemon = () => {
     const { id } = useParams();
@@ -44,7 +45,7 @@ const Pokemon = () => {
                   <PokeSprite src={ 
                     (pokemonData.sprites.front_default) ?  
                       (pokemonData.sprites.front_default):
-                        "../resources/notFound.png"
+                        urlNotfound
                     } />
               </SectionContainer>
             </GridHeader>

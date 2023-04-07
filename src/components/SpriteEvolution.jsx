@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { getDataByUrl } from '../js/getPokemonData'
 import { PokeSprite } from '../styles/style-pokemon-info'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { NextIcon } from '../styles/style-pokemon-info'
 import { useNavigate } from 'react-router-dom'
 import { urlSprites } from '../js/Directions'
+import { urlPokemonData } from '../js/Directions'
 
 const SpriteEvolution = ({data}) => {
     const [name, setName] = useState("")
@@ -25,7 +25,7 @@ const SpriteEvolution = ({data}) => {
                     flexDirection:"column",
                     justifyContent:"center",
                     padding:"0px"}}>
-            <div onClick={ () => {navigate(`/pokemon/${id}`);window.location.reload(true)} }>
+            <div onClick={ () => {navigate(`${urlPokemonData+id}`);window.location.reload(true)} }>
                 {(sprite) && <PokeSprite src={sprite}/> }
             </div>
             <div>{ name }</div>

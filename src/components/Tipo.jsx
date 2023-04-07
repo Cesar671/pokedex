@@ -1,12 +1,13 @@
 import React,{useState, useEffect} from 'react'
 import { TypeStyled } from '../styles/style-tipo'
+import { urlResourcesTyps } from '../js/Directions'
 
 const Tipo = ({name}) => {
 
     const [tipoUrl, setTipoUrl] = useState(null)
 
     useEffect(() => {
-        setTipoUrl(`resources/tipos/${name}.png`)
+        setTipoUrl(`${urlResourcesTyps+name}.png`)
     }, [])
     
 

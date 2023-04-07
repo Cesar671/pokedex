@@ -2,6 +2,7 @@ import React from 'react'
 import { SeparateBetweenContainer, ButtonStyled } from '../styles/style-button'
 import { SectionContainer, PokeballIcon } from '../styles/style-pokemon-info'
 import { useNavigate } from 'react-router-dom'
+import { urlPokeball, urlPokemonData } from '../js/Directions'
 const BottonsNextPrevius = ({currentIndex}) => {
   const navigate = useNavigate();
 
@@ -10,7 +11,7 @@ const BottonsNextPrevius = ({currentIndex}) => {
   }
 
   const reLinkPage = (id) => {
-    navigate(`/pokemon/${id}`);
+    navigate(`${urlPokemonData+id}`);
     window.location.reload(true);
   }
 
@@ -30,7 +31,7 @@ const BottonsNextPrevius = ({currentIndex}) => {
           
         </div>
         <SectionContainer style={{padding: "0"}}>
-            <PokeballIcon src = "../resources/pokeball.png"/>
+            <PokeballIcon src = {urlPokeball}/>
                   { "id : #"+currentIndex.toString().padStart(4,"0")}
         </SectionContainer>
         <ButtonStyled onClick={next}>Next &gt;</ButtonStyled>
