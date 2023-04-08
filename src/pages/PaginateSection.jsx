@@ -3,7 +3,6 @@ import CardSection from './CardSection';
 import { getDataByGeneration } from '../js/getPokemonData';
 import { sortListPokemon, slicePokemonArray } from '../js/sortPokemon';
 import Pagination from '../components/Pagination';
-import { BackgroundGradient } from '../styles/style-background';
 
  const PaginateSection = ({generation}) => {
     const [PokemonList, setPokemonList] = useState([])
@@ -18,12 +17,10 @@ import { BackgroundGradient } from '../styles/style-background';
     }
 
     useEffect(() => {
-        getDataByGeneration(parseInt(generation)).then( result => {
-            const ordered = sortListPokemon(result.pokemon_species)
-            const sliced = slicePokemonArray(ordered, 20)
-            setRegion(result.main_region.name)
-            setPokemonList(sliced)
-        })
+        setRegion(generation.url.main_region.name)
+        const ordered = sortListPokemon(generation.url.pokemon_species)
+        const sliced = slicePokemonArray(ordered, 20)
+        setPokemonList(sliced)
     }, [])
 
     useEffect(() => {
@@ -33,7 +30,6 @@ import { BackgroundGradient } from '../styles/style-background';
 
     return (<>
         {(pokemons) && <>
-            <BackgroundGradient />
             <RenderSection pokemon={pokemons} 
                         region={ region }
                         />

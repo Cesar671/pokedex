@@ -1,10 +1,8 @@
 export const sortListPokemon = (pokeList = []) => {
     const ordered = pokeList.sort((a , b) => {
-        const pokeurl1 = a.url.split("/")
-        const id1 = parseInt(pokeurl1[pokeurl1.length-2])
+        const id1 = parseInt(a.id)
         
-        const pokeurl2 = b.url.split("/")
-        const id2 = parseInt(pokeurl2[pokeurl2.length-2])
+        const id2 = parseInt(b.id)
 
         if(id1>id2){
             return 1;

@@ -10,7 +10,7 @@ export const urlPokedex = "../resources/Pokedex.png"
 export const urlPokemonData = "/pokedex/pokemon/"
 
 export const menuPages = [{  
-        name: 'pokedex',
+        name: 'Pokedex',
         icon: urlPokedex,
         url: '/pokedex',
     },{  

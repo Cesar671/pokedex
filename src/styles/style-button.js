@@ -28,6 +28,7 @@ export const ButtonMenuContainer = styled.div`
     transition: 0.3s ease-in-out;
     color:white;
     text-decoration: none;
+
     @keyframes sparkle3 {
         0% {
             box-shadow: none;

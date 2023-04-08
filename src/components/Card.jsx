@@ -5,7 +5,6 @@ import { CardStyled,
         NameCardStyled,
         ImageStyledCard,
         DivNameContainer } from '../styles/style-card'
-import { getDataByUrl } from '../js/getPokemonData'
 import Tipo from './Tipo'
 import { TypeContainer } from '../styles/style-tipo'
 import { useNavigate } from 'react-router-dom'
@@ -18,13 +17,8 @@ const Card = ({data}) => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    const url = data.url
-    const urlSplited = url.split("/")
-    const id = urlSplited[urlSplited.length-2]
-    setIdPokemon(id);
-    getDataByUrl(id).then( response => {
-      setDataPokemon(response)
-    })
+    setIdPokemon(data.id)
+    setDataPokemon(data)
   },[])
   
   return (<>{(dataPokemon) && 
