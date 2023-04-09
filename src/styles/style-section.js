@@ -3,7 +3,6 @@ import styled from "styled-components";
 const Section = styled.div`
 background: rgb(117,117,117);
 background: linear-gradient(198deg, rgba(117,117,117,0) 0%, rgba(120,120,120,1) 50%, rgba(122,122,122,0) 100%);
-padding: 30px;
 max-width: 1000px;
 width: 100%;
 `;

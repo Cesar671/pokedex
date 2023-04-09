@@ -1,6 +1,7 @@
 import React,{ useEffect, useState, createContext } from 'react'
 import Searcher from '../components/filter/searcher'
 import { getAllData } from '../js/getPokemonData';
+import Loader from '../components/Loader/Loader';
 
 export const FilterPokemonCtx = createContext();
 
@@ -29,14 +30,12 @@ const Pokedex = ({Section}) => {
   },[])
 
   return (<>
-    {generations && <main style={{ marginTop: "100px" }}>
+    {generations ? <main style={{ marginTop: "100px" }}>
         <Searcher filter = { filter } setState= { setCurrentData }/>
-        <FilterPokemonCtx.Provider value={ currentData }>
           {
             generations.map((data) => <Section generation = { data }/>)
           }
-        </FilterPokemonCtx.Provider>
-    </main>}
+    </main>:<div style={{height:"100%"}}><Loader /></div>}
   </>
     
   )

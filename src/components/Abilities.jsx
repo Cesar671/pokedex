@@ -1,6 +1,7 @@
 import React from 'react'
 import TipeRow from './TipeRow'
 import { AbilityInfo } from '../styles/style-pokemon-info'
+import Loader from './Loader/Loader'
 
 const Abilities = ({abilities}) => {
 

@@ -15,6 +15,7 @@ import Sprites from '../components/Sprites';
 import Weakeness from '../components/Weakeness';
 import BottonsNextPrevius from '../components/BottonsNextPrevius';
 import { urlNotfound } from '../js/Directions';
+import Loader from '../components/Loader/Loader';
 
 const Pokemon = () => {
     const { id } = useParams();
@@ -26,9 +27,9 @@ const Pokemon = () => {
       })
     }, [])
     
-  return (<>
-      <ContainerInfo>
-        {(pokemonData) ? (<>
+  return (
+      <>
+        {(pokemonData) ? (<ContainerInfo>
             <BottonsNextPrevius currentIndex={ id } />
             <GridHeader>
               <SectionSections>
@@ -58,9 +59,7 @@ const Pokemon = () => {
             <Desplegable name = "Movements" Data = {() => 
                 <Movements movements = { pokemonData.moves }/>} />}
             <Desplegable name = "Images" Data = { () => <Sprites sprites={ pokemonData.sprites } /> }/>
-            </>): <div>Cargando...</div>}
-        </ContainerInfo>
-    
+            </ContainerInfo>): <div><Loader /></div>}
   </>
     
   )
