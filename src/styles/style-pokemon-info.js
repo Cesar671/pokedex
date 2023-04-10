@@ -99,6 +99,7 @@ export const SectionContainerData = styled.div`
 
 export const EvolutionContainer = styled.div`
     display: flex;
+    flex-wrap: wrap;
 `;
 
 export const NextIcon = styled(FontAwesomeIcon)`

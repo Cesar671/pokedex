@@ -1,12 +1,11 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Main } from '../styles/style-card-section'
 import { Section, HeaderTittle, PokedexImg } from '../styles/style-section'
 import Card from '../components/Card'
-import { FilterPokemonCtx } from './Pokedex'
+
 
 const CardSection = ({pokemon, region }) => {
   const [pokemones, setPokemon] = useState(null)
-  const filterctx = useContext(FilterPokemonCtx); 
   useEffect(() => {
     setPokemon(pokemon)
   }, [ pokemon])

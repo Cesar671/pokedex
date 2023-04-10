@@ -24,7 +24,7 @@ const SpriteEvolution = ({data}) => {
                     alignItems: "center", 
                     flexDirection:"column",
                     justifyContent:"center",
-                    padding:"0px"}}>
+                    flexWrap:"wrap"}}>
             <div onClick={ () => {navigate(`${urlPokemonData+id}`);window.location.reload(true)} }>
                 {(sprite) && <PokeSprite src={sprite}/> }
             </div>
@@ -34,10 +34,10 @@ const SpriteEvolution = ({data}) => {
         <div style={{ display:"flex" ,
                         alignItems: "center", 
                         flexDirection:"column",
-                        justifyContent:"center"}}>
+                        justifyContent:"center",}}>
             {data.evolves_to.map((dataRes) => 
         
-            <div style={{display: "flex", alignItems: "center"}}>
+            <div style={{display: "flex", alignItems: "center", flexWrap: "wrap"}}>
                 <NextIcon icon={faArrowRight}/>
                 <SpriteEvolution data={dataRes}/>
             </div>
