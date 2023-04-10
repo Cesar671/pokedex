@@ -8,6 +8,7 @@ import { urlSprites } from '../js/Directions'
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons'
 import { NextIcon } from '../styles/style-pokemon-info'
 import { urlNotfound } from '../js/Directions'
+import Loader from './Loader/Loader'
 
 const Evolutions = ({id}) => {
 
@@ -62,7 +63,7 @@ const Evolutions = ({id}) => {
             </EvolutionContainer>
         </>
         : 
-            <div>...cargando</div>}
+            <Loader />}
         <RenderPokemonVarieties />
     </>
   )

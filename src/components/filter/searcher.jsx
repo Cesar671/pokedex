@@ -10,10 +10,12 @@ const Searcher = ({ filter, filterFunction }) => {
         filter.search = inputRef.current.value
     }
 
-    const handlerFilterButton = () => {
+    const handlerFilterButton =  () => {
         setSearch(true)
-        filterFunction()
-        setSearch(false)
+        setTimeout( () =>{
+          filterFunction()
+          setSearch(false)
+        }, 0)
     }
 
   return (
